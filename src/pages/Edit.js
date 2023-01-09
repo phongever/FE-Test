@@ -12,12 +12,13 @@ const Edit = () => {
     image: "",
   });
   const [tempImage, setTempImage] = useState("");
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
+  const [loadingButton, setLoadingButton] = useState(false);
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setLoading(true);
+    setLoadingButton(true);
     let url = post.image;
 
     if (url !== "" && typeof url !== "string") {
@@ -55,7 +56,7 @@ const Edit = () => {
 
   const handleDelete = async () => {
     if (window.confirm("Are you sure?")) {
-      setLoading(true);
+      setLoadingButton(true);
       await deletePost(id);
       navigate("/");
     }
@@ -130,7 +131,7 @@ const Edit = () => {
             <Button
               type="button"
               className="w-50 btn-danger mr-2"
-              disabled={loading}
+              disabled={loadingButton}
               onClick={handleDelete}
               data-toggle="modal"
               data-target="#modal"
@@ -139,9 +140,9 @@ const Edit = () => {
             </Button>
             <Button
               className="w-50 btn-primary"
-              disabled={post.title === "" || loading}
+              disabled={post.title === "" || loadingButton}
             >
-              {loading ? "Updating..." : "Update"}
+              Update
             </Button>
           </div>
         </form>

@@ -84,7 +84,7 @@ const Create = () => {
               <div className="mb-3">
                 <img className="w-25" src={tempImage} alt={post.title} />
                 <Button
-                  className="btn-outline-danger ms-2"
+                  className="btn-outline-danger ml-2"
                   onClick={deleteImage}
                 >
                   Delete image

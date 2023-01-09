@@ -1,0 +1,22 @@
+.post img {
+  object-fit: cover;
+  height: 20rem;
+}
+
+.post p {
+  max-height: 8rem;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 5;
+  overflow: hidden;
+}
+
+.post:hover {
+  background: #ebf0f5;
+}
+
+@media (min-width: 768px) {
+  .post img {
+    height: 15rem;
+  }
+}

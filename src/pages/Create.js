@@ -103,7 +103,7 @@ const Create = () => {
         </div>
         <div className="d-grid">
           <Button
-            className="btn-primary"
+            className="btn-primary btn-block"
             disabled={post.title === "" || loading}
           >
             {loading ? "Creating..." : "Create"}

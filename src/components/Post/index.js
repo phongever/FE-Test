@@ -5,7 +5,7 @@ import "./style.css";
 
 const Post = ({ post }) => {
   return (
-    <div className="post media row py-3">
+    <div className="post media row my-3 py-3">
       <div className="col-12 col-md-4">
         <img
           src={post.image === "" ? defaultImage : post.image}
